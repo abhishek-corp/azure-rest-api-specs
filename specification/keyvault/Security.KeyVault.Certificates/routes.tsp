@@ -34,7 +34,7 @@ op getCertificates is KeyVaultOperation<
      * Specifies whether to include certificates which are not completely provisioned.
      */
     @query("includePending")
-    includePending?: boolean;
+    includePending?: ListCertificateOptions.includePending;
   },
   CertificateListResult
 >;
@@ -544,7 +544,7 @@ op getDeletedCertificates is KeyVaultOperation<
      * Specifies whether to include certificates which are not completely provisioned.
      */
     @query("includePending")
-    includePending?: boolean;
+    includePending?: ListCertificateOptions.includePending;
   },
   DeletedCertificateListResult
 >;

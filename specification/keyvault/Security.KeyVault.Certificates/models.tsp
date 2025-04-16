@@ -154,9 +154,22 @@ model CertificateListResult {
   /**
    * The URL to get the next set of certificates.
    */
+  #suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "Required to pass includePending to next pages"
   @TypeSpec.nextLink
   @visibility(Lifecycle.Read)
-  nextLink?: string;
+  nextLink?: Azure.Core.Legacy.parameterizedNextLink<[
+    ListCertificateOptions.includePending
+  ]>;
+}
+
+/**
+ * Model for passing an includePending option to list operations.
+ */
+model ListCertificateOptions {
+  /**
+   * Specifies whether to include certificates which are not completely provisioned.
+   */
+  includePending?: boolean;
 }
 
 /**
@@ -1023,9 +1036,12 @@ model DeletedCertificateListResult {
   /**
    * The URL to get the next set of deleted certificates.
    */
+  #suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "Required to pass includePending to next pages"
   @TypeSpec.nextLink
   @visibility(Lifecycle.Read)
-  nextLink?: string;
+  nextLink?: Azure.Core.Legacy.parameterizedNextLink<[
+    ListCertificateOptions.includePending
+  ]>;
 }
 
 /**

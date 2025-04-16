@@ -1561,6 +1561,7 @@
         },
         "nextLink": {
           "type": "string",
+          "format": "uri",
           "description": "The URL to get the next set of certificates.",
           "readOnly": true
         }
@@ -1925,6 +1926,7 @@
         },
         "nextLink": {
           "type": "string",
+          "format": "uri",
           "description": "The URL to get the next set of deleted certificates.",
           "readOnly": true
         }
@@ -2294,6 +2296,16 @@
         "action": {
           "$ref": "#/definitions/Action",
           "description": "The action that will be executed."
+        }
+      }
+    },
+    "ListCertificateOptions": {
+      "type": "object",
+      "description": "Model for passing an includePending option to list operations.",
+      "properties": {
+        "includePending": {
+          "type": "boolean",
+          "description": "Specifies whether to include certificates which are not completely provisioned."
         }
       }
     },
