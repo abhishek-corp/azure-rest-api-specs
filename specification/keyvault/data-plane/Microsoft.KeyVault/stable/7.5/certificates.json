@@ -142,7 +142,7 @@
         }
       }
     },
-    "/certificates/{certificate-name}/{certificate-version}": {
+    "/certificates/{certificate-name}{certificate-version}": {
       "get": {
         "operationId": "GetCertificate",
         "summary": "Gets information about a certificate.",
@@ -163,7 +163,7 @@
             "name": "certificate-version",
             "in": "path",
             "description": "The version of the certificate. This URI fragment is optional. If not specified, the latest version of the certificate is returned.",
-            "required": true,
+            "required": false,
             "type": "string",
             "x-ms-client-name": "certificateVersion"
           }
@@ -208,7 +208,7 @@
             "name": "certificate-version",
             "in": "path",
             "description": "The version of the certificate.",
-            "required": true,
+            "required": false,
             "type": "string",
             "x-ms-client-name": "certificateVersion"
           },
