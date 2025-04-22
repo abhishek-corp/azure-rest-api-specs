@@ -154,6 +154,25 @@ model CertificateListResult {
   /**
    * The URL to get the next set of certificates.
    */
+  @TypeSpec.nextLink
+  @visibility(Lifecycle.Read)
+  nextLink?: string;
+}
+
+/**
+ * The certificate list result, with includePending included in response pages.
+ */
+@pagedResult
+model CertificateListResultWithPending {
+  /**
+   * A response message containing a list of certificates in the key vault along with a link to the next page of certificates.
+   */
+  @items
+  value?: CertificateItem[];
+
+  /**
+   * The URL to get the next set of certificates.
+   */
   #suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "Required to pass includePending to next pages"
   @TypeSpec.nextLink
   @visibility(Lifecycle.Read)

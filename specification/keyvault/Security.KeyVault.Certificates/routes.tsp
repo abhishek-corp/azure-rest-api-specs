@@ -36,7 +36,7 @@ op getCertificates is KeyVaultOperation<
     @query("includePending")
     includePending?: ListCertificateOptions.includePending;
   },
-  CertificateListResult
+  CertificateListResultWithPending
 >;
 
 /**

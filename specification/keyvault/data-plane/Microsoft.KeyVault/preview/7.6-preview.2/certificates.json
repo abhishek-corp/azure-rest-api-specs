@@ -83,7 +83,7 @@
           "200": {
             "description": "The request has succeeded.",
             "schema": {
-              "$ref": "#/definitions/CertificateListResult"
+              "$ref": "#/definitions/CertificateListResultWithPending"
             }
           },
           "default": {
@@ -1563,6 +1563,24 @@
     "CertificateListResult": {
       "type": "object",
       "description": "The certificate list result.",
+      "properties": {
+        "value": {
+          "type": "array",
+          "description": "A response message containing a list of certificates in the key vault along with a link to the next page of certificates.",
+          "items": {
+            "$ref": "#/definitions/CertificateItem"
+          }
+        },
+        "nextLink": {
+          "type": "string",
+          "description": "The URL to get the next set of certificates.",
+          "readOnly": true
+        }
+      }
+    },
+    "CertificateListResultWithPending": {
+      "type": "object",
+      "description": "The certificate list result, with includePending included in response pages.",
       "properties": {
         "value": {
           "type": "array",
