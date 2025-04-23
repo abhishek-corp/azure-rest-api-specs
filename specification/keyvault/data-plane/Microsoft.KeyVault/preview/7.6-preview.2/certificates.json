@@ -2039,7 +2039,7 @@
           "readOnly": true
         },
         "innererror": {
-          "$ref": "#/definitions/Error",
+          "$ref": "#/definitions/NullableError",
           "description": "The key vault server error.",
           "readOnly": true,
           "x-ms-client-name": "innerError"
