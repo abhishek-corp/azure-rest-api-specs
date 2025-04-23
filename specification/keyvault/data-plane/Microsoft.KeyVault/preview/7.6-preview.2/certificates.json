@@ -142,7 +142,7 @@
         }
       }
     },
-    "/certificates/{certificate-name}{certificate-version}": {
+    "/certificates/{certificate-name}/{certificate-version}": {
       "get": {
         "operationId": "GetCertificate",
         "summary": "Gets information about a certificate.",

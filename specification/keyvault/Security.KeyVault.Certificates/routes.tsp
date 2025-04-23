@@ -336,7 +336,7 @@ op updateCertificatePolicy is KeyVaultOperation<
  */
 #suppress "@azure-tools/typespec-azure-core/use-standard-operations" "Foundations.Operation is necessary for Key Vault"
 @summary("Updates the specified attributes associated with the given certificate.")
-@route("/certificates/{certificate-name}{/certificate-version}")
+@route("/certificates/{certificate-name}/{/certificate-version}")
 @patch
 op updateCertificate is KeyVaultOperation<
   {
@@ -370,7 +370,7 @@ op updateCertificate is KeyVaultOperation<
  */
 #suppress "@azure-tools/typespec-azure-core/use-standard-operations" "Foundations.Operation is necessary for Key Vault"
 @summary("Gets information about a certificate.")
-@route("/certificates/{certificate-name}{/certificate-version}")
+@route("/certificates/{certificate-name}/{/certificate-version}")
 @get
 op getCertificate is KeyVaultOperation<
   {
